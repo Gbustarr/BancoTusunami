@@ -1,61 +1,39 @@
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<!-- eslint-disable vue/valid-v-else -->
+<!-- Root de la app-->
+<!-- Aqui debería estar la lectura de permanencia de datos en el localstorage-->
+<!-- Si no existe datos en localstorage, es porque es un usuario nuevo o se deslogueó 
+      con anterioridad
+-->
 
-import API from '@/api';
+<script setup>
+import index from './pages/index.vue';
+import home from './pages/home.vue';
+import registro from './pages/registro.vue';
+import logintest from './pages/logintest.vue';
+import cuentadeahorro from './pages/cuentadeahorro.vue';
+import { onMounted } from 'vue';
+import API from '@/API.js';
 
-export default {
-    methods:{
-      async addUsuario(){
-        await API.addUsuario();
-      }
-    },
-    mounted(){
-      this.addUsuario();
-    }
-}
+
+// Forma de crear metodos
+const addUsuario = async () => {
+  await API.addUsuario();
+};
+// Los metodos que involucren el ciclo del programa deben ser importados primero
+onMounted(() => {
+  //addUsuario();
+});
+
+const newAccount = false; // Placeholder para implementar lo del localstorage despues
 
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <router-view/>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>

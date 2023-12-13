@@ -1,4 +1,4 @@
-# Frontend Proyecto 2, Módulo Construcción de Software 2023: Banco Tusunami
+# Backend Proyecto 2, Módulo Construcción de Software 2023: Banco Tusunami
 
 El proyecto consiste en simular la interacción con el Banco Tusunami, que este a su vez contiene diversas sucursales a lo largo del pais con clientes en cada uno.
 
@@ -10,10 +10,6 @@ Se recomienda ejecutar el **BACKEND** primero y luego el frontend si necesitas i
 
 Asegurar que todas las dependencias estén instaladas con: **npm install**
 
-## Como ejecutar el Frontend
+## Como ejecutar el Backend
 
-Desde la consola y en la ruta actual: **npm run dev**
-
-## Consideraciones
-
-Utilizar la etiqueta **`<script setup>`** en sus componentes para aprovechar el *Composition API* de Vue, si no se agrega el 'setup' se estaría utilizando el *Option API*
+Desde la consola y en la ruta actual: **npm run devbabel**
